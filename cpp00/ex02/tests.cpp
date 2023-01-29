@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hosunglim <hosunglim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:48:01 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/27 20:53:34 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/01/29 23:27:45 by hosunglim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
-#include "./Account.hpp"
+#include "Account.hpp"
 
 
 int		main( void ) {
