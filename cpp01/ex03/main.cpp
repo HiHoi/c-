@@ -5,20 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 16:19:53 by hosunglim         #+#    #+#             */
-/*   Updated: 2023/01/30 19:52:22 by hoslim           ###   ########.fr       */
+/*   Created: 2023/01/30 20:22:22 by hoslim            #+#    #+#             */
+/*   Updated: 2023/01/30 21:10:58 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(void)
 {
-    Zombie *z = zombieHorde(10, "First");
+    {
+        Weapon club = Weapon("curde spiked club");
 
-    z->announce();
-    delete [] z;
-    // for (int i = 0; i < 10; i++)
-    //     delete z;
-    system("leaks Brainz");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+
+    {
+        Weapon club = Weapon("crude spiked club");
+
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }

@@ -3,11 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hosunglim <hosunglim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:19:49 by hosunglim         #+#    #+#             */
-/*   Updated: 2023/01/29 18:11:41 by hosunglim        ###   ########.fr       */
+/*   Updated: 2023/01/30 19:28:41 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Zombie.hpp"
+
+Zombie::Zombie(std::string name)
+{
+    _name = name;
+    std::cout << "Beginning!" << std::endl;
+}
+
+Zombie::~Zombie(void)
+{
+    std::cout << "Bye Bye" << std::endl;
+}
+
+void    Zombie::announce(void)
+{
+    std::cout << _name << ": ";
+    std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+}

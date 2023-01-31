@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hosunglim <hosunglim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:19:46 by hosunglim         #+#    #+#             */
-/*   Updated: 2023/01/29 18:21:59 by hosunglim        ###   ########.fr       */
+/*   Updated: 2023/01/30 19:30:14 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Zombie  *newZombie(std::string name)
 {
-    Zombie  *n = new Zombie;
-    
-    
+    Zombie  *z = new Zombie(name);
+    return (z);
 }

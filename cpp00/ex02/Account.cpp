@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hosunglim <hosunglim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:48:05 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/29 23:31:18 by hosunglim        ###   ########.fr       */
+/*   Updated: 2023/01/30 16:26:41 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Account::Account(void)
 
 Account::Account(int initial_deposit)
 {
-	Account();
 	_amount = initial_deposit;
 	_accountIndex = _nbAccounts++;
 	_totalAmount += initial_deposit;
