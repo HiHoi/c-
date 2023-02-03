@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:38:36 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/03 17:54:42 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/03 19:14:33 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Fixed::Fixed(void)
 Fixed::Fixed(const int _num)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->num = _num;
+    this->num = _num << this->fixedPoint;
 }
 
 Fixed::Fixed(const float _num)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->num = _num;
+    this->num = roundf(_num * (1 << this->fixedPoint));
 }
 
 Fixed::~Fixed(void)
@@ -56,12 +56,12 @@ void    Fixed::setRawBits(int const raw)
 
 float   Fixed::toFloat(void) const
 {
-
+    return ((float)this->num / (1 << this->fixedPoint));
 }
 
 int Fixed::toInt(void) const
 {
-
+    return (this->num >> this->fixedPoint);
 }
 
 Fixed&  Fixed::operator=(const Fixed &fixed)
@@ -72,7 +72,8 @@ Fixed&  Fixed::operator=(const Fixed &fixed)
     return (*this);
 }
 
-Fixed&  Fixed::operator<<(const Fixed &fixed)
+std::ostream&  operator<<(std::ostream &out, const Fixed &fixed)
 {
-    
+    out << fixed.toFloat();
+    return (out);
 }
