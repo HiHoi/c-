@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 16:38:49 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 19:09:56 by hoslim           ###   ########.fr       */
+/*   Created: 2023/02/05 21:00:48 by hoslim            #+#    #+#             */
+/*   Updated: 2023/02/05 21:07:48 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include "Point.hpp"
+#ifndef _FRAGTRAP_HPP_
+#define _FRAGTRAP_HPP_
 
-int main( void ) 
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-    Point   a(4.0, 4.0);
-    Point   b(1.0, 2.0);
-    Point   c(3.0, 1.0);
-    Point   point1(3.5, 3.5);
-    Point   point2(-3.5, 6.5);
-    Point   point3(3.5, -6.5);
+private:
+public:
+    FragTrap(void);
+    FragTrap(std::string name);
+    ~FragTrap(void);
+    FragTrap(const FragTrap &fragTrap);
+    FragTrap&   operator=(const FragTrap &fragTrap);
 
-    std::cout << bsp(a, b, c, point1) << std::endl;
-    std::cout << bsp(a, b, c, point2) << std::endl;
-    std::cout << bsp(a, b, c, point3) << std::endl;
-}
+    void    highFivesGuys(void);
+    void    attack(const std::string &target);
+};
+
+#endif

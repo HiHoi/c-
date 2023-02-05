@@ -6,19 +6,19 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/29 16:18:01 by hosunglim         #+#    #+#              #
-#    Updated: 2023/02/05 17:49:37 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/05 21:03:30 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = BSP
+NAME = RepetiteWork
 FLAG = -Wall -Wextra -Werror -std=c++98
 C++ = c++
 RM = rm -rf
 SRCS = \
 	./main.cpp\
-	./Fixed.cpp\
-	./Point.cpp\
-	./bsp.cpp
+	./ClapTrap.cpp\
+	./ScavTrap.cpp\
+	./FragTrap.cpp
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c
