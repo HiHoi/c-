@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 16:19:48 by hosunglim         #+#    #+#             */
-/*   Updated: 2023/01/30 19:26:14 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:37:48 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define _ZOMBIE_HPP_ 
 
 #include <iostream>
-#include <string>
 
 class Zombie
 {

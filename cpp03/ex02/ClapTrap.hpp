@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:23:11 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 20:57:27 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:39:09 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define _CLAPTRAP_HPP_
 
 #include <iostream>
-#include <string>
 
 class ClapTrap
 {

@@ -6,12 +6,11 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:29:27 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/27 16:17:54 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:35:18 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int main(int ac, char **av)
 {

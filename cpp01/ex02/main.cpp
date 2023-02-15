@@ -6,12 +6,11 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:00:49 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/30 20:19:36 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:38:01 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int main(void)
 {

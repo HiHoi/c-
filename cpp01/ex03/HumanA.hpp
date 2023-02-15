@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:23:10 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/31 19:55:57 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:38:11 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define _HUMANA_HPP_
 
 #include <iostream>
-#include <string>
 #include "Weapon.hpp"
 
 class HumanA

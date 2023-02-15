@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 12:35:42 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/03 16:18:58 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/15 12:38:51 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define _HARL_HPP_
 
 #include <iostream>
-#include <string>
 
 class Harl
 {
