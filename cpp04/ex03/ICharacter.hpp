@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:27:21 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 19:17:27 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/16 16:12:42 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-class ICharacter : public AMateria
+class   AMateria;
+
+class   ICharacter
 {
     private:
     protected:
+        const std::string   _name;
     public:
         virtual ~ICharacter() {}
         virtual std::string const & getName() const = 0;

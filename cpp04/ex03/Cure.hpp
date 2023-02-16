@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:23:38 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 19:00:32 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:12:16 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class   Cure : public AMateria
 {
     private:
+        std::string type;
     protected:
     public:
         Cure(void);
@@ -26,7 +27,9 @@ class   Cure : public AMateria
         Cure(const Cure& _ice);
         Cure&    operator=(const Cure& _ice);
 
-        AMateria*   clone(void) const;
+        std::string const&  getType(void) const;
+        Cure*   clone(void) const;
+        void    use(ICharacter& _target);
         
 };
 

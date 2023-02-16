@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
+#    By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 13:01:24 by hoslim            #+#    #+#              #
-#    Updated: 2023/02/15 17:40:26 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/16 17:48:55 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ SRCS = \
 	./main.cpp\
 	./Ice.cpp\
 	./Cure.cpp\
-	./AMateria.cpp
+	./AMateria.cpp\
+	./MateriaSource.cpp\
+	./Character.cpp
+	
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:17 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 19:00:46 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:12:42 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : type("ice")
 {
 }
 
@@ -20,23 +20,30 @@ Ice::~Ice(void)
 {
 }
 
-Ice::Ice(const Ice& _ice)
+Ice::Ice(const Ice& _ice) : type(_ice.type)
 {
-    this->type = _ice.getType();
 }
 
 Ice&    Ice::operator=(const Ice& _ice)
 {
-    if (this != &_ice)
-    {
-        this->type = _ice.getType();
-    }
+    (void)_ice;
     return (*this);
 }
 
-AMateria*   Ice::clone(void) const
+Ice*   Ice::clone(void) const
 {
-    AMateria* a = new AMateria(ice);
+    Ice*    ice = new Ice();
     
-    return (a);
+    return (ice);
+}
+
+void    Ice::use(ICharacter& _target)
+{
+    std::cout << "* shoots an ice bolt at " << _target.getName();
+    std::cout << " *" << std::endl;
+}
+
+std::string const& Ice::getType(void) const
+{
+    return (this->type);
 }

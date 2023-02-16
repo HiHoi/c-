@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:19:56 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 19:16:38 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:14:15 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "ICharacter.hpp"
+#include "Character.hpp"
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 int main() 
 {

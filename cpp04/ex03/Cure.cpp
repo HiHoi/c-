@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:04 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 18:58:49 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/16 17:13:25 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : type("cure")
 {
 }
 
@@ -20,23 +20,30 @@ Cure::~Cure(void)
 {
 }
 
-Cure::Cure(const Cure& _ice)
+Cure::Cure(const Cure& _cure) : type(_cure.type)
 {
-    this->type = _ice.getType();
 }
 
-Cure&    Cure::operator=(const Cure& _ice)
+Cure&    Cure::operator=(const Cure& _cure)
 {
-    if (this != &_ice)
-    {
-        this->type = _ice.getType();
-    }
+    (void)_cure;
     return (*this);
 }
 
-AMateria*   Cure::clone(void) const
+Cure*   Cure::clone(void) const
 {
-    AMateria* a = new AMateria(ice);
+    Cure* a = new Cure();
     
     return (a);
+}
+
+void    Cure::use(ICharacter& _target)
+{
+    std::cout << "* heals " << _target.getName();
+    std::cout << "’s wounds *" << std::endl;
+}
+
+std::string const&  Cure::getType(void) const
+{
+    return (this->type);
 }
