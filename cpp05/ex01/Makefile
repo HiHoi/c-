@@ -6,11 +6,11 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 13:01:24 by hoslim            #+#    #+#              #
-#    Updated: 2023/02/17 13:39:13 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/17 18:52:37 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = FormUp
 FLAG = -Wall -Wextra -Werror -std=c++98
 C++ = c++
 RM = rm -rf
