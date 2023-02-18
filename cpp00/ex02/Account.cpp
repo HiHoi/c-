@@ -6,11 +6,12 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:48:05 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/30 16:26:41 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/18 19:29:18 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
 #include "Account.hpp"
 
 int	Account::_nbAccounts = 0;
@@ -20,7 +21,12 @@ int	Account::_totalNbWithdrawals = 0;
 
 void Account::_displayTimestamp(void)
 {
-	std::cout << "[20220127_101042] ";
+	time_t	timer = time(NULL);
+	struct tm* timeInfo = localtime(&timer);
+
+	std::cout << "[" << timeInfo->tm_year + 1900 << timeInfo->tm_mon + 1;
+	std::cout << timeInfo->tm_mday << "_" << timeInfo->tm_hour;
+	std::cout << timeInfo->tm_min << timeInfo->tm_sec << "] ";
 }
 
 Account::Account(void)

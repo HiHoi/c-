@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:11:37 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/17 14:50:52 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/18 14:32:12 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "AForm.hpp"
+
+class Form;
 
 class   Bureaucrat
 {
@@ -35,19 +38,21 @@ class   Bureaucrat
         void    increment(void);
         void    decrement(void);
 
+        void    executeForm(Form const& form);
+
         class   Exception : public  std::exception
         {
             public:
                 virtual const char* what(void) const throw();
         };
 
-        class   GradeTooHighException : public  Exception
+        class   GradeTooHighException : public  Bureaucrat::Exception
         {
             public:
                 const char* what(void) const throw();
         };
 
-        class   GradeTooLowException : public   Exception
+        class   GradeTooLowException : public   Bureaucrat::Exception
         {
             public:
                 const char* what(void) const throw();

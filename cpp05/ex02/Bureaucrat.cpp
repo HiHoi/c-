@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:24:18 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/17 13:37:54 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/18 19:51:53 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,20 @@ void    Bureaucrat::decrement(void)
         this->grade = yourGrade + 1;
     }
     catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(Form const& form)
+{
+    try
+    {
+        if (this->getGrade() > form.getGradeToExec())
+            throw (GradeTooLowException());
+        std::cout << this->getName() << " executed " << form << std::endl;
+    }
+    catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }

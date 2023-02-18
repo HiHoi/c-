@@ -6,7 +6,7 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 13:01:24 by hoslim            #+#    #+#              #
-#    Updated: 2023/02/17 18:53:14 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/18 19:52:38 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,10 @@ RM = rm -rf
 SRCS = \
 	./main.cpp\
 	./Bureaucrat.cpp\
-	./Form.cpp
+	./AForm.cpp\
+	./ShrubberyCreationForm.cpp\
+	./RobotomyRequestForm.cpp\
+	./PresidentialPardonForm.cpp
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c
