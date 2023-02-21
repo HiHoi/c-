@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:29:27 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:35:18 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/21 20:22:47 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ int main(int ac, char **av)
     {
         j = -1;
         while (av[i][++j])
-        {
-            if (av[i][j] >= 'a' && av[i][j] <= 'z')
-                av[i][j]-= 32;
-        }
-        std::cout << av[i];
+            std::cout << static_cast<char> (std::toupper(av[i][j]));
     }
     std::cout << std::endl;
     return (0);

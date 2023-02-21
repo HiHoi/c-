@@ -6,25 +6,38 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:20:42 by hoslim            #+#    #+#             */
-/*   Updated: 2023/01/31 18:59:21 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/21 20:35:34 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./PhoneBook.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 void	PhoneBook::ADD(unsigned int num)
 {
-	this->contact[num].idx = num + 1;
+	std::string	buffer0;
+	std::string	buffer1;
+	std::string	buffer2;
+	std::string	buffer3;
+	std::string	buffer4;
+	
+	this->contact[num].setIndex(num + 1);
 	std::cout << "Enter your first name : ";
-	std::cin >> this->contact[num].FirstName;
+	std::cin >> buffer0;
+	this->contact[num].setFirstName(buffer0);
 	std::cout << "Enter your last name : ";
-	std::cin >> this->contact[num].LastName;
+	std::cin >> buffer1;
+	this->contact[num].setLastName(buffer1);
 	std::cout << "Enter your nickname : ";
-	std::cin >> this->contact[num].nickname;
+	std::cin >> buffer2;
+	this->contact[num].setNickname(buffer2);
 	std::cout << "Enter your phone number : ";
-	std::cin >> this->contact[num].phonenumber;
+	std::cin >> buffer3;
+	this->contact[num].setPhoneNumber(buffer3);
 	std::cout << "Enter your secret : ";
-	std::cin >> this->contact[num].secret;
+	std::cin >> buffer4;
+	this->contact[num].setSecret(buffer4);
+	std::cin.ignore();
 }
 
 void	PhoneBook::SEARCH(void)
@@ -35,7 +48,7 @@ void	PhoneBook::SEARCH(void)
 	std::string	last;
 	std::string	nick;
 
-	if (this->contact[0].idx != 1)
+	if (this->contact[0].getIndex() != 1)
 	{
 		std::cout << "Please add at least once" << std::endl;
 		return ;
@@ -43,91 +56,64 @@ void	PhoneBook::SEARCH(void)
 	std::cout << "     Index" << "|" << "First Name" << "|" << " Last Name" << "|" << "  NickName" << std::endl;
 	while (i < 8)
 	{
-		if (this->contact[i].idx != i + 1)
+		if (this->contact[i].getIndex() != i + 1)
 			break ;
 		std::cout.width(10);
 		std::cout.fill(' ');
-		std::cout << this->contact[i].idx << '|';
+		std::cout << this->contact[i].getIndex() << '|';
 		std::cout.width(10);
 		std::cout.fill(' ');
-		if (this->contact[i].FirstName.length() > 10)
+		if (this->contact[i].getFirstName().length() > 10)
 		{
-			first = this->contact[i].FirstName.substr(0, 9);
+			first = this->contact[i].getFirstName().substr(0, 9);
 			first += '.';
 		}
 		else
-			first = this->contact[i].FirstName;
+			first = this->contact[i].getFirstName();
 		std::cout << first << '|';
 		std::cout.width(10);
 		std::cout.fill(' ');
-		if (this->contact[i].LastName.length() > 10)
+		if (this->contact[i].getLastName().length() > 10)
 		{
-			last = this->contact[i].LastName.substr(0, 9);
+			last = this->contact[i].getLastName().substr(0, 9);
 			last += '.';
 		}
 		else
-			last = this->contact[i].LastName;
+			last = this->contact[i].getLastName();
 		std::cout << last << '|';
 		std::cout.width(10);
 		std::cout.fill(' ');
-		if (this->contact[i].nickname.length() > 10)
+		if (this->contact[i].getNickname().length() > 10)
 		{
-			nick = this->contact[i].nickname.substr(0, 9);
+			nick = this->contact[i].getNickname().substr(0, 9);
 			nick += '.';
 		}
 		else
-			nick = this->contact[i].nickname;
+			nick = this->contact[i].getNickname();
 		std::cout << nick << std::endl;
 		i++;
 	}
 	std::cout << "Enter number : ";
 	std::cin >> len;
-	if (len < 1 || len > i)
+	if (len > 0 && len <= i)
 	{
-		std::cout << "Enter wrong number" << std::endl;
-		return ;
+		std::cout << "Selected First Name : " << this->contact[len - 1].getFirstName() << std::endl;
+		std::cout << "Selected Last Name : " << this->contact[len - 1].getLastName() << std::endl;
+		std::cout << "Selected Nick Name : " << this->contact[len - 1].getNickname() << std::endl;
+		std::cout << "Selected Phone number : " << this->contact[len - 1].getPhoneNumber() << std::endl;
+		std::cout << "Selected secret : " << this->contact[len - 1].getSecret() << std::endl;
+		std::cin.ignore();
 	}
-	std::cout << "Selected First Name : " << this->contact[len - 1].FirstName << std::endl;
-	std::cout << "Selected Last Name : " << this->contact[len - 1].LastName << std::endl;
-	std::cout << "Selected Nick Name : " << this->contact[len - 1].nickname << std::endl;
+	else if (std::cin.fail() == 1 || !(len > 0 && len <= i))
+	{
+		std::cin.clear();
+		std::cin.ignore(100, '\n');
+		std::cout << "Invaild Arg" << std::endl;
+	}
 	return ;
 }
 
 void	PhoneBook::EXIT(void)
 {
 	exit(0);
-}
-
-int main(void)
-{
-	int			i;
-	std::string	cmd;
-	PhoneBook	book;
-	
-	i = 0;
-	while (1)
-	{
-		std::cout << "Enter Command : ";
-		std::cin >> cmd;
-		if (cmd == "EXIT")
-			book.EXIT();
-		else if (cmd == "ADD")
-		{
-			if (i == 8)
-				i = 0;
-			book.ADD(i);
-			i++;
-		}
-		else if (cmd == "SEARCH")
-			book.SEARCH();
-		else if (cmd.empty())
-		{
-			std::cout << "Invalid signal" << std::endl;
-			break ;
-		}
-		else
-			std::cout << "command : not found" << std::endl;
-		cmd.clear();
-	}
-	return (0);
 }

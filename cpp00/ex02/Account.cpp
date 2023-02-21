@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:48:05 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/18 19:29:18 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/21 16:47:21 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void Account::_displayTimestamp(void)
 {
 	time_t	timer = time(NULL);
 	struct tm* timeInfo = localtime(&timer);
+	char	buffer[80];
 
-	std::cout << "[" << timeInfo->tm_year + 1900 << timeInfo->tm_mon + 1;
-	std::cout << timeInfo->tm_mday << "_" << timeInfo->tm_hour;
-	std::cout << timeInfo->tm_min << timeInfo->tm_sec << "] ";
+	strftime(buffer, 80, "%Y%m%d_%H%M%S", timeInfo);
+	std::cout << "[" << buffer << "] ";
 }
 
 Account::Account(void)
@@ -76,8 +76,6 @@ int	Account::getNbWithdrawals(void)
 	return (_totalNbWithdrawals);
 }
 
-//[20104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
-
 void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
@@ -100,9 +98,6 @@ void	Account::makeDeposit(int deposit)
     _totalAmount += deposit;
     _totalNbDeposits++;
 }
-
-//19920104_091532] index:5;p_amount:23;withdrawal:refused
-//[19920104_091532] index:6;p_amount:763;withdrawal:657;amount:106;nb_withdrawals:1
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
@@ -130,8 +125,6 @@ int	Account::checkAmount(void) const
 {
 	return (_amount);
 }
-
-//[19920104_091532] index:1;amount:785;deposits:1;withdrawals:1
 
 void	Account::t::displayStatus(void) const
 {
