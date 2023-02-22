@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:16:54 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/21 20:28:09 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 17:31:42 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int main(void)
 	{
 		std::cout << "Enter Command : ";
 		std::getline(std::cin, cmd);
-		if (cmd == "EXIT")
+		if (cmd.compare("EXIT") == 0)
 			book.EXIT();
-		else if (cmd == "ADD")
+		else if (cmd.compare("ADD") == 0)
 		{
 			if (i == 8)
 				i = 0;
 			book.ADD(i);
 			i++;
 		}
-		else if (cmd == "SEARCH")
+		else if (cmd.compare("SEARCH") == 0)
 			book.SEARCH();
 		else if (std::cin.eof())
 		{

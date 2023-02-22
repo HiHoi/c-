@@ -6,24 +6,27 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:15:10 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/14 15:50:00 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 21:14:06 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : name(ClapTrap::getName())
+DiamondTrap::DiamondTrap(void)
 {
-    this->name = name + "_clap_name";
+    std::cout << "DiamondTrap has summoned" << std::endl;
+    this->name = "default" + "_clap_name";
 }
 
 DiamondTrap::DiamondTrap(std::string _name)
 {
-    this->setName(_name);
+    std::cout << "DiamondTrap " << _name << " has summoned" << std::endl;
+    this->name = _name + "_clap_name";
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
+    std::cout << "DiamondTrap has gone" << std::enld;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& _dia)
@@ -42,5 +45,5 @@ DiamondTrap&    DiamondTrap::operator=(DiamondTrap const& _dia)
 
 void    DiamondTrap::whoAmI(void)
 {
-    std::cout << "My name is " << this->getName() << std::endl;
+    std::cout << "My name is " << this->name << std::endl;
 }

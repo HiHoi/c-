@@ -6,12 +6,35 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:20:42 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/21 20:35:34 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 14:37:55 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+
+void	PhoneBook::printSearch(int idx) const
+{
+	std::cout.width(10);
+	std::cout.fill(' ');
+	std::cout << idx << '|';
+}
+
+void	PhoneBook::printSearch(std::string str)
+{
+	std::string	buffer;
+	
+	std::cout.width(10);
+	std::cout.fill(' ');
+	if (str.length() > 10)
+	{
+		buffer = str.substr(0, 9);
+		buffer += '.';
+	}
+	else
+		buffer = str;
+	std::cout << buffer << '|';
+}
 
 void	PhoneBook::ADD(unsigned int num)
 {
@@ -44,53 +67,22 @@ void	PhoneBook::SEARCH(void)
 {
 	int			i = 0;
 	int			len = 0;
-	std::string	first;
-	std::string	last;
-	std::string	nick;
 
 	if (this->contact[0].getIndex() != 1)
 	{
 		std::cout << "Please add at least once" << std::endl;
 		return ;
 	}
-	std::cout << "     Index" << "|" << "First Name" << "|" << " Last Name" << "|" << "  NickName" << std::endl;
+	std::cout << "     Index" << "|" << "First Name" << "|" << " Last Name" << "|" << "  NickName|" << std::endl;
 	while (i < 8)
 	{
 		if (this->contact[i].getIndex() != i + 1)
 			break ;
-		std::cout.width(10);
-		std::cout.fill(' ');
-		std::cout << this->contact[i].getIndex() << '|';
-		std::cout.width(10);
-		std::cout.fill(' ');
-		if (this->contact[i].getFirstName().length() > 10)
-		{
-			first = this->contact[i].getFirstName().substr(0, 9);
-			first += '.';
-		}
-		else
-			first = this->contact[i].getFirstName();
-		std::cout << first << '|';
-		std::cout.width(10);
-		std::cout.fill(' ');
-		if (this->contact[i].getLastName().length() > 10)
-		{
-			last = this->contact[i].getLastName().substr(0, 9);
-			last += '.';
-		}
-		else
-			last = this->contact[i].getLastName();
-		std::cout << last << '|';
-		std::cout.width(10);
-		std::cout.fill(' ');
-		if (this->contact[i].getNickname().length() > 10)
-		{
-			nick = this->contact[i].getNickname().substr(0, 9);
-			nick += '.';
-		}
-		else
-			nick = this->contact[i].getNickname();
-		std::cout << nick << std::endl;
+		printSearch(this->contact[i].getIndex());
+		printSearch(this->contact[i].getFirstName());
+		printSearch(this->contact[i].getLastName());
+		printSearch(this->contact[i].getNickname());
+		std::cout << std::endl;
 		i++;
 	}
 	std::cout << "Enter number : ";

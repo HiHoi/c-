@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:23:11 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/14 13:03:32 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 21:07:11 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,20 @@
 
 class ClapTrap
 {
-private:
-    std::string name;
-    int         hitPoint;
-    int         energyPoint;
-    int         attackDamage;
-public:
-    ClapTrap(void);
-    ~ClapTrap(void);
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap &claptrap);
+    protected:
+        std::string name;
+        int         hitPoint;
+        int         energyPoint;
+        int         attackDamage;
+    public:
+        ClapTrap(void);
+        virtual ~ClapTrap(void);
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &claptrap);
 
-    ClapTrap&   operator=(const ClapTrap &claptrap);
-
-    std::string    getName(void) const;
-    unsigned int     getHit(void) const;
-    unsigned int     getEnergy(void) const;
-    unsigned int     getDamage(void) const;
-    
-    void    setName(std::string name);
-    void    setHit(unsigned int);
-    void    setEnergy(unsigned int);
-    void    setDamage(unsigned int);
-    
-    void    attack(const std::string& target);
+        ClapTrap&   operator=(const ClapTrap &claptrap);
+        
+    virtual void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 };

@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:47:49 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 20:55:26 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 21:07:48 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ public:
     void    guardGate(void);
     void    attack(const std::string &target);
 };
-
-
 
 #endif

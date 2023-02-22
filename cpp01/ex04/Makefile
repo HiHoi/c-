@@ -6,7 +6,7 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/29 16:18:01 by hosunglim         #+#    #+#              #
-#    Updated: 2023/01/31 21:09:55 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/22 17:49:32 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ FLAG = -Wall -Wextra -Werror -std=c++98
 C++ = c++
 RM = rm -rf
 SRCS = \
-	./main.cpp\
-	./convert.cpp
+	./main.cpp
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c

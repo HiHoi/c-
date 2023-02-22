@@ -6,11 +6,11 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/29 16:18:01 by hosunglim         #+#    #+#              #
-#    Updated: 2023/02/03 16:25:51 by hoslim           ###   ########.fr        #
+#    Updated: 2023/02/22 19:56:28 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl
+NAME = harlFilter
 FLAG = -Wall -Wextra -Werror -std=c++98
 C++ = c++
 RM = rm -rf

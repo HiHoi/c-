@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:39:15 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 19:44:54 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 20:51:19 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int main(void)
 {
-    ClapTrap    a("Slayer");
+    ClapTrap    a("A");
+    ClapTrap    b("B");
 
-    a.attack("b");
+    a.attack("B");
+    b.takeDamage(0);
+    a.beRepaired(3);
 }

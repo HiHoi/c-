@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:02:12 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 21:09:32 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/22 21:05:43 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 FragTrap::FragTrap(void)
 {
-    this->setHit(100);
-    this->setEnergy(100);
-    this->setDamage(30);
+    std::cout << "FragTrap has summoned" << std::endl;
+    this->hitPoint = 100;
+    this->energyPoint = 100;
+    this->attackDamage = 30;
 }
-FragTrap::FragTrap(std::string name)
+
+FragTrap::FragTrap(std::string _name)
 {
-    this->setName(name);
-    this->setHit(100);
-    this->setEnergy(100);
-    this->setDamage(30);
+    std::cout << "FragTrap " << _name << " has summoned" << std::endl;
+    this->name = _name;
+    this->hitPoint = 100;
+    this->energyPoint = 100;
+    this->attackDamage = 30;
 }
 
 FragTrap::~FragTrap(void)
 {
+    std::cout << "FragTrap has gone" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& fragTrap)
@@ -38,25 +42,25 @@ FragTrap::FragTrap(const FragTrap& fragTrap)
 FragTrap&   FragTrap::operator=(const FragTrap& fragTrap)
 {
     if (this != &fragTrap)
-    {
-        this->setName(fragTrap.getName());
-        this->setDamage(fragTrap.getDamage());
-        this->setEnergy(fragTrap.getEnergy());
-        this->setHit(fragTrap.getHit());
-    }
+        this->name = fragTrap.name;
     return (*this);
 }
 
 void    FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << this->getName();
-    std::cout << " wants to take high fives!" << std::endl;
+    std::cout << "FragTrap wants to HIGHFIVE" << std::endl;
 }
 
 void    FragTrap::attack(const std::string& target)
 {
-    std::cout << "FragTrap " << this->getName();
-    std::cout << " attacks " << target;
-    std::cout << ", causing " << this->getDamage();
-    std::cout << " points of damage!" << std::endl;
+    if (this->energyPoint > 0)
+    {
+        std::cout << "FragTrap " << this->name;
+        std::cout << " attacks " << target;
+        std::cout << ", causing " << this->attackDamage;
+        std::cout << " points of damage!" << std::endl;
+        this->energyPoint--;
+    }
+    else
+        std::cout << "FragTrap needs more energy" << std::endl;
 }
