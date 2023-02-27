@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:15:10 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/22 21:14:06 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/02/27 16:11:27 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : name(ClapTrap::name)
 {
     std::cout << "DiamondTrap has summoned" << std::endl;
-    this->name = "default" + "_clap_name";
+    ClapTrap::name = name + "_clap_name";
 }
 
-DiamondTrap::DiamondTrap(std::string _name)
+DiamondTrap::DiamondTrap(std::string _name) : ClapTrap(), FragTrap(), ScavTrap()
 {
-    std::cout << "DiamondTrap " << _name << " has summoned" << std::endl;
-    this->name = _name + "_clap_name";
+    this->attackDamage = 30;
+    this->name = _name;
+    ClapTrap::name = _name + "_clap_name";
+    std::cout << "DiamondTrap " << this->name << " has summoned" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -29,16 +31,19 @@ DiamondTrap::~DiamondTrap(void)
     std::cout << "DiamondTrap has gone" << std::enld;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const& _dia)
+DiamondTrap::DiamondTrap(DiamondTrap const& _dia) : ClapTrap(_dia), FragTrap(_dia), ScavTrap(_dia), name(_dia.name)
 {
-    this->name = _dia.getName();
+    std::cout << "DiamondTrap " << this->name << " summoned" << std::endl;
 }
 
 DiamondTrap&    DiamondTrap::operator=(DiamondTrap const& _dia)
 {
     if (this != &_dia)
     {
-        this->name = _dia.getName();
+        this->name = _dia.name;
+        this->attackDamage = _dia.attackDamage;
+        this->energyPoint = _dia.energyPoint;
+        this->hitPoint = _dia.hitPoint;
     }
     return (*this);
 }
