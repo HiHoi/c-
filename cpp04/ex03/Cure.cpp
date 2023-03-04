@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:04 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/16 17:13:25 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 17:25:07 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Cure::Cure(const Cure& _cure) : type(_cure.type)
 
 Cure&    Cure::operator=(const Cure& _cure)
 {
-    (void)_cure;
+    if (this != &_cure)
+        type = _cure.type;
     return (*this);
 }
 

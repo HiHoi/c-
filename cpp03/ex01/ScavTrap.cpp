@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:54:01 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/22 21:00:17 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 12:32:52 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,39 @@ ScavTrap::ScavTrap(const ScavTrap& scavTrap)
 ScavTrap&   ScavTrap::operator=(const ScavTrap& scavTrap)
 {
     if (this != &scavTrap)
+    {
         this->name = scavTrap.name;
+        this->attackDamage = scavTrap.attackDamage;
+        this->hitPoint = scavTrap.hitPoint;
+        this->energyPoint = scavTrap.energyPoint;
+    }
     return (*this);
 }
 
 void    ScavTrap::guardGate(void)
 {
-    std::cout << "ScavTrap " << this->name;
-    std::cout << " uses GuardGate!" << std::endl;
+    if (this->hitPoint <= 0)
+    {
+        std::cout << "* This claptrap looks like broken... *" << std::endl;
+        return ;
+    }
+    if (this->energyPoint > 0)
+    {
+        std::cout << "ScavTrap " << this->name;
+        std::cout << " uses GuardGate!" << std::endl;
+        this->energyPoint--;
+    }
+    else
+        std::cout << "ScavTrap needs more energy" << std::endl;
 }
 
 void    ScavTrap::attack(const std::string& target)
 {
+    if (this->hitPoint <= 0)
+    {
+        std::cout << "* This claptrap looks like broken... *" << std::endl;
+        return ;
+    }
     if (this->energyPoint > 0)
     {
         std::cout << "ScavTrap " << this->name;

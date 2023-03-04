@@ -6,24 +6,22 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:12 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:52:55 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 18:59:49 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void)
+WrongAnimal::WrongAnimal(void) : type("wrong life")
 {
-  this->type = "life";
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& _animal)
+WrongAnimal::WrongAnimal(const WrongAnimal& _animal) : type(_animal.type)
 {
-  this->type = _animal.type;
 }
 
 WrongAnimal&  WrongAnimal::operator=(const WrongAnimal& _animal)

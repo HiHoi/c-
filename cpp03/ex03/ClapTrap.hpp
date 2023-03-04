@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:23:11 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/22 21:07:11 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 13:19:41 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ClapTrap
 
         ClapTrap&   operator=(const ClapTrap &claptrap);
         
-    virtual void    attack(const std::string& target);
+    void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 };

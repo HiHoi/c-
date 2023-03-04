@@ -6,7 +6,7 @@
 #    By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 20:25:05 by hoslim            #+#    #+#              #
-#    Updated: 2023/02/13 20:25:05 by hoslim           ###   ########.fr        #
+#    Updated: 2023/03/04 12:42:17 by hoslim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ SRCS = \
 	./main.cpp\
 	./Animal.cpp\
 	./Dog.cpp\
-	./Cat.cpp
+	./Cat.cpp\
+	./WrongAnimal.cpp\
+	./WrongCat.cpp\
+	./WrongDog.cpp
 OBJS = $(SRCS:.c=.o)
 
 %.o : %.c

@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:16 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/13 21:08:12 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 12:58:12 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ private:
     std::string *ideas;
 public:
     Brain(void);
-    Brain(Brain& _brain);
+    Brain(const Brain& _brain);
     virtual ~Brain(void);
     Brain&  operator=(Brain const& _brain);
 
-    std::string*    getIdeas(void);
+    std::string*    getIdeas(void) const;
 };
 
 #endif

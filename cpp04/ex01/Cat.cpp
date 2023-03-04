@@ -1,8 +1,8 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : type("Cat")
 {
-    this->type = "Cat";
     this->catBrain = new Brain();
 }
 
@@ -11,15 +11,19 @@ Cat::~Cat(void)
   delete this->catBrain;
 }
 
-Cat::Cat(const Cat& _cat)
+Cat::Cat(const Cat& _cat) : type(_cat.type)
 {
-  this->type = _cat.getType();
+  catBrain = new Brain(*(_cat).catBrain);
 }
 
 Cat&  Cat::operator=(const Cat& _cat)
 {
   if (this != &_cat)
+  {
     this->type = _cat.getType();
+    delete this->catBrain;
+    catBrain = new Brain(*(_cat).catBrain);
+  }
   return (*this);
 }
 

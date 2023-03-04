@@ -6,24 +6,22 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:18 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:51:20 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 18:58:52 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongDog.hpp"
 
-WrongDog::WrongDog(void)
+WrongDog::WrongDog(void) : type("WrongDog")
 {
-    this->type = "WrongDog";
 }
 
 WrongDog::~WrongDog(void)
 {
 }
 
-WrongDog::WrongDog(const WrongDog& _dog)
+WrongDog::WrongDog(const WrongDog& _dog) : type(_dog.type)
 {
-  this->type = _dog.getType();
 }
 
 WrongDog&  WrongDog::operator=(const WrongDog& _dog)

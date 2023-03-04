@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:00:48 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/14 15:41:08 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 13:17:58 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     FragTrap&   operator=(const FragTrap &fragTrap);
 
     void    highFivesGuys(void);
-    virtual void    attack(const std::string &target);
+    void    attack(const std::string &target);
 };
 
 #endif

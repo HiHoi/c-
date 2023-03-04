@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:39:15 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/05 21:09:40 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 12:31:47 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,20 @@ int main(void)
     FragTrap    f("Frag");
 
     a.attack("Scav");
+    s.takeDamage(0);
+    
     s.guardGate();
     s.attack("Clap");
-    f.highFivesGuys();
+    a.takeDamage(20);
+
     f.attack("Scav");
+    s.takeDamage(30);
+    f.attack("Scav");
+    s.takeDamage(30);
+    f.attack("Scav");
+    s.takeDamage(30);
+    f.attack("Scav");
+    s.takeDamage(30);
+    s.guardGate();
+    f.highFivesGuys();
 }

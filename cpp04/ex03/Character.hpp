@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:08:15 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/16 17:15:11 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 13:28:46 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Character : public ICharacter
 {
     private:
         const std::string name;
-        AMateria*   (inventory[4]);
+        AMateria*   inventory[4];
     public:
         Character(std::string _name);
         ~Character(void);

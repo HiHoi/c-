@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:59:17 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/16 17:12:42 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 17:24:33 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Ice::Ice(const Ice& _ice) : type(_ice.type)
 
 Ice&    Ice::operator=(const Ice& _ice)
 {
-    (void)_ice;
+    if (this != &_ice)
+        type = _ice.type;
     return (*this);
 }
 

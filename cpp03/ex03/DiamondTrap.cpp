@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:15:10 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/27 16:11:27 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 14:05:27 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 DiamondTrap::DiamondTrap(void) : name(ClapTrap::name)
 {
     std::cout << "DiamondTrap has summoned" << std::endl;
-    ClapTrap::name = name + "_clap_name";
+    ClapTrap::name = "_clap_name";
 }
 
 DiamondTrap::DiamondTrap(std::string _name) : ClapTrap(), FragTrap(), ScavTrap()
@@ -28,7 +28,7 @@ DiamondTrap::DiamondTrap(std::string _name) : ClapTrap(), FragTrap(), ScavTrap()
 
 DiamondTrap::~DiamondTrap(void)
 {
-    std::cout << "DiamondTrap has gone" << std::enld;
+    std::cout << "DiamondTrap has gone" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& _dia) : ClapTrap(_dia), FragTrap(_dia), ScavTrap(_dia), name(_dia.name)
@@ -50,5 +50,16 @@ DiamondTrap&    DiamondTrap::operator=(DiamondTrap const& _dia)
 
 void    DiamondTrap::whoAmI(void)
 {
-    std::cout << "My name is " << this->name << std::endl;
+    if (this->hitPoint <= 0)
+    {
+        std::cout << "* This diamondtrap looks like broken... *" << std::endl;
+        return ;
+    }
+    if (this->energyPoint > 0)
+    {
+        std::cout << "My name is " << this->name << std::endl;
+        this->energyPoint--;
+    }
+    else
+        std::cout << "DiamondTrap needs more energy" << std::endl;
 }

@@ -1,17 +1,15 @@
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : type("life")
 {
-  this->type = "life";
 }
 
 Animal::~Animal(void)
 {
 }
 
-Animal::Animal(const Animal& _animal)
+Animal::Animal(const Animal& _animal) : type(_animal.type)
 {
-  this->type = _animal.type;
 }
 
 Animal&  Animal::operator=(const Animal& _animal)

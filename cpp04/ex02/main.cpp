@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:00:52 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 13:18:34 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 12:58:57 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int  main(void)
   j->makeSound();
   delete j;
   delete i;
+  // system("leaks AbstractClass");
   return 0;
 }

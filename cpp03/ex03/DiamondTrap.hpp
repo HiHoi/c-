@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:14:11 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/27 16:04:04 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 13:16:38 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ public:
     ~DiamondTrap(void);
     DiamondTrap(DiamondTrap const& _dia);
     DiamondTrap& operator=(DiamondTrap const& _dia);
+
+    using   ScavTrap::attack;
+    using   ScavTrap::energyPoint;
+    using   FragTrap::hitPoint;
+    using   FragTrap::attackDamage;
 
     void    whoAmI(void);
 };

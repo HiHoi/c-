@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:35 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:47:20 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 12:42:41 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define  _WRONGDOG_HPP_
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class  WrongDog : public Animal
+class  WrongDog : public WrongAnimal
 {
   private:
   protected:

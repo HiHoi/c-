@@ -6,24 +6,22 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:17 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:51:22 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 18:59:19 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat(void) : type("WrongCat")
 {
-    this->type = "WrongCat";
 }
 
 WrongCat::~WrongCat(void)
 {
 }
 
-WrongCat::WrongCat(const WrongCat& _cat)
+WrongCat::WrongCat(const WrongCat& _cat) : type(_cat.type)
 {
-  this->type = _cat.getType();
 }
 
 WrongCat&  WrongCat::operator=(const WrongCat& _cat)

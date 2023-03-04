@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:24:51 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/13 21:11:41 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 12:49:11 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Brain::~Brain(void)
     delete [] this->ideas;
 }
 
-Brain::Brain(Brain& _brain)
+Brain::Brain(const Brain& _brain)
 {
     std::string* buf = _brain.getIdeas();
     this->ideas = new std::string[100];
@@ -42,7 +42,7 @@ Brain& Brain::operator=(Brain const& _brain)
     return (*this);
 }
 
-std::string*    Brain::getIdeas(void)
+std::string*    Brain::getIdeas(void) const
 {
     return(this->ideas);
 }

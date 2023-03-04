@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoslim <hoslim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:09:14 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/16 17:44:50 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/04 17:19:17 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,14 @@ Character::~Character(void)
 }
 
 Character::Character(const Character& _cha) : name(_cha.name)
-{;
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (_cha.inventory[i])
+            inventory[i] = (_cha.inventory[i])->clone();
+        else
+            inventory[i] = 0;
+    }
 }
 
 Character&  Character::operator=(const Character& _cha)
@@ -43,6 +50,8 @@ Character&  Character::operator=(const Character& _cha)
                 delete this->inventory[i];
             if (_cha.inventory[i])
                 this->inventory[i] = (_cha.inventory[i])->clone();
+            else
+                inventory[i] = 0;
         }
     }
     return (*this);
@@ -59,11 +68,19 @@ void    Character::equip(AMateria* m)
 
     while ((this->inventory)[i] && i < 4)
         i++;
-    (this->inventory)[i] = m;
+    if (i >= 4)
+    {
+        std::cout << "You got too much...!" << std::endl;
+        return ;
+    }
+    if (inventory[i])
+        delete inventory[i];
+    (this->inventory)[i] = m->clone();
 }
 
 void    Character::unequip(int idx)
 {
+    delete this->inventory[idx];
     (this->inventory)[idx] = 0;
 }
 

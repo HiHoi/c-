@@ -15,5 +15,6 @@ int  main(void)
   meta->makeSound();
   delete j;
   delete i;
+  // system("leaks TheWorldOnFire");
   return 0;
 }

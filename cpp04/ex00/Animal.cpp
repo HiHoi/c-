@@ -6,24 +6,22 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:02 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/13 20:25:03 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 18:55:21 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : type("life")
 {
-  this->type = "life";
 }
 
 Animal::~Animal(void)
 {
 }
 
-Animal::Animal(const Animal& _animal)
+Animal::Animal(const Animal& _animal) : type(_animal.type)
 {
-  this->type = _animal.type;
 }
 
 Animal&  Animal::operator=(const Animal& _animal)

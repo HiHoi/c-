@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:02:12 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/22 21:05:43 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 12:31:29 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,28 @@ FragTrap&   FragTrap::operator=(const FragTrap& fragTrap)
 
 void    FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap wants to HIGHFIVE" << std::endl;
+    if (this->hitPoint <= 0)
+    {
+        std::cout << "* This fragtrap looks like broken... *" << std::endl;
+        return ;
+    }
+    if (this->energyPoint > 0)
+    {
+        std::cout << "FragTrap " << this->name;
+        std::cout << " wants to HIGHFIVE" << std::endl;
+        this->energyPoint--;
+    }
+    else
+        std::cout << "FragTrap needs more energy" << std::endl;
 }
 
 void    FragTrap::attack(const std::string& target)
 {
+    if (this->hitPoint <= 0)
+    {
+        std::cout << "* This fragtrap looks like broken... *" << std::endl;
+        return ;
+    }
     if (this->energyPoint > 0)
     {
         std::cout << "FragTrap " << this->name;

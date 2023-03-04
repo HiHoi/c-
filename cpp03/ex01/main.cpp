@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:39:15 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/22 21:01:12 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 12:13:36 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main(void)
     ScavTrap    s("Scav");
 
     a.attack("Scav");
+    s.takeDamage(0);
     s.guardGate();
     s.attack("Clap");
+    a.takeDamage(20);
 }

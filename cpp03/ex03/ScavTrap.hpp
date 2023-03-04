@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:47:49 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/14 15:41:02 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 13:17:57 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     ScavTrap&   operator=(const ScavTrap &scavTrap);
 
     void    guardGate(void);
-    virtual void    attack(const std::string &target);
+    void    attack(const std::string &target);
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: hoslim <hoslim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:25:33 by hoslim            #+#    #+#             */
-/*   Updated: 2023/02/15 12:47:21 by hoslim           ###   ########.fr       */
+/*   Updated: 2023/03/03 19:00:07 by hoslim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class   WrongCat : public WrongAnimal
     public:
         WrongCat(void);
         ~WrongCat(void);
-        WrongCat(const Cat& _cat);
-        Cat&    operator=(const Cat& _cat);
+        WrongCat(const WrongCat& _cat);
+        WrongCat&    operator=(const WrongCat& _cat);
 
         std::string getType(void) const;
         void    makeSound(void) const;
